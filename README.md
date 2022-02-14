@@ -10,4 +10,5 @@
  * 한 번에 끝내는 React의 모든 것 초격차 패키지 Online. - fastcampus
 
 
-### [Next.js](./Next.js/nextjs.md)
+### 스터디 정리
+ * [Next.js](./Next.js/nextjs.md)
