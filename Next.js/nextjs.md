@@ -26,3 +26,26 @@
     1. React는 SPA(Single Page Application)를 전제로 하고 있지만, 구동속도가 SSR에 비해 느린 단점을 개선.
 2. **코드 스플리팅(Code splitting)**
     1. React에서 만든 컴포넌트들을 한번에 전체를 가져오는 것이 아니라 특정 페이지에 들어갈 경우 특정 페이지에 해당하는 것만 가져와서 사용할 수 있게 함.
+
+## 기능
+ * Static Generation - 값이 변경이 없다면 SSR보다 빠르기때문에 고정값이면 이 기능 사용 추천(blog같은 사이트)
+ * Link Component - < a > 사용하는 링크는 새로 다 페이지를 불러오나 Link 사용시 필요한 부분만 다시 불러와서 속도 더 빠르다
+   * Link 컴포넌트 사용시 Client-side navigation 이 가능하다. 이는 자바스크립트를 사용하여 페이지 전환을 하므로 더 빠르게 작동한다.
+ ```
+ <h1 className="title">
+  Learn <a href="https://nextjs.org">Next.js!</a>
+</h1>
+ ```
+ 
+ ```
+ <h1 className="title">
+  Read{' '}
+  <Link href="/posts/first-post">
+    <a>this page!</a>
+  </Link>
+</h1>
+ ```
+  * Code splitting - 코드 분할하여 필요할 때만 필요한 부분을 불러오게 함.
+  * Prefetching - Next.js의 프로덕션 빌드에서 Link 구성 요소가 뷰포트에 나타날때 자동으로 백그라운드에서 미리 페이지를 불러와 즉각적으로 페이지 전환이 가능하게 함. 특정사이트로 이동시에는 a태그를 사용하지만 내부 경로이동시에는 Link 기능 사용 추천!
+  * Head, Image 등 사용하기 편하게 만들어 놓음.
+ 
