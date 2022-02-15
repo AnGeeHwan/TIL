@@ -58,5 +58,4 @@
     * 이 두가지 방법은 페이지 별로 설정해서 컨트롤 가능함! (ex. A page는 Static Generation, B page는 Server side Rendering)
   * getStaticProps 사용시 빌드할 경우 번들에 포함되어 노출되는 것에 대해 염려하지 않아도 된다.
   * getServerSideProps 사용시 getStaticProps함수명만 변경해주면 사용 가능하다. TTFB(Time to first byte)는 getStaticProps가 더 빠르다.
-  * CSR을 고려한다면 SWR(캐싱/패칭) 추천.
-  * 
+  * CSR을 고려한다면 SWR(캐싱/패칭) 추천. 
