@@ -49,3 +49,14 @@
   * Prefetching - Next.js의 프로덕션 빌드에서 Link 구성 요소가 뷰포트에 나타날때 자동으로 백그라운드에서 미리 페이지를 불러와 즉각적으로 페이지 전환이 가능하게 함. 특정사이트로 이동시에는 a태그를 사용하지만 내부 경로이동시에는 Link 기능 사용 추천!
   * Head, Image 등 사용하기 편하게 만들어 놓음.
  
+  * hydration - 페이지가 브라우저에 로드되고 자바스크립트 코드가 실행되며 페이지가 인터렉티브하게 동작할 상태가 되는 과정
+  * Pre-rendering
+    * HTML 파일만 가져와도 무언가 보이면서 렌더링된다.
+    * No Pre-rendering 일 경우 사용자가 비어잇는 화면을 먼저 보게 된다.
+    * Static Generation - 고정된 것들을 빌드타이밍때 이미 만들어서 보여준다.
+    * Server-side Rendering - 사용자 한명 한명이 요청할 때마다 그에 맞는 것을 렌더링해서 보여준다.
+    * 이 두가지 방법은 페이지 별로 설정해서 컨트롤 가능함! (ex. A page는 Static Generation, B page는 Server side Rendering)
+  * getStaticProps 사용시 빌드할 경우 번들에 포함되어 노출되는 것에 대해 염려하지 않아도 된다.
+  * getServerSideProps 사용시 getStaticProps함수명만 변경해주면 사용 가능하다. TTFB(Time to first byte)는 getStaticProps가 더 빠르다.
+  * CSR을 고려한다면 SWR(캐싱/패칭) 추천.
+  * 
