@@ -1,10 +1,10 @@
 import axiosInstance from "./index";
 
-export const latestApi = () => axiosInstance.get(`/movie/latest`);
+export const latestApi = () => axiosInstance.get("/movie/latest");
 
 export const upcomingApi = () => axiosInstance.get("/movie/upcoming");
 
-export const nowPlaygApi = () => axiosInstance.get("/movie/now_playing");
+export const nowPlayingApi = () => axiosInstance.get("/movie/now_playing");
 
 export const todoRatedApi = () => axiosInstance.get("/movie/top_rated");
 

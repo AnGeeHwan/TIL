@@ -1,18 +1,30 @@
 import React from "react";
-import ReactSlick, { Settings } from "react-slick";
+import ReactSlider, { Settings } from "react-slick";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
-import { MdArrowBackIos, MdArrowForwardIos, MdTranslate } from "react-icons/md";
-import { transform } from "typescript";
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+
+interface Props {
+  settings?: Settings;
+}
 
 const ArrowButton = styled.button<{ pos?: "left" | "right" }>`
   padding: 16px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   z-index: 1;
   top: 50%;
   background-color: #fff;
-  &{({ pos }) => pos === 'left' ? css'left: 0; transform: MdTranslate(-50%, -50%)' : css'right: 0; transform: MdTranslate(50%, -50%)'}
+  ${({ pos }) =>
+    pos === "left"
+      ? css`
+          left: 0;
+          transform: translate(-50%, -50%);
+        `
+      : css`
+          right: 0;
+          transform: translate(50%, -50%);
+        `};
   &:before {
     content: initial;
   }
@@ -28,32 +40,30 @@ const ArrowButton = styled.button<{ pos?: "left" | "right" }>`
 `;
 
 const DEFAULT_SETTINGS: Settings = {
+  slide: "Slider",
   dots: false,
   arrows: true,
-  infinite: false,
+  infinite: true,
   speed: 500,
   slidesToShow: 5,
   slidesToScroll: 5,
   swipe: true,
   draggable: true,
+  vertical: false,
   prevArrow: (
-    <ArrowButton>
+    <ArrowButton pos="left">
       <MdArrowBackIos />
     </ArrowButton>
   ),
   nextArrow: (
-    <ArrowButton>
+    <ArrowButton pos="right">
       <MdArrowForwardIos />
     </ArrowButton>
   ),
 };
 
-interface Props {
-  settings?: Settings;
-}
-
-const Slider: React.FC<Props> = ({ settings = DEFAULT_SETTINGS, children }) => {
-  return <ReactSlick {...settings}>{children}</ReactSlick>;
-};
+const Slider: React.FC<Props> = ({ settings = DEFAULT_SETTINGS, children }) => (
+  <ReactSlider {...settings}>{children}</ReactSlider>
+);
 
 export default Slider;
