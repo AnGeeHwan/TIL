@@ -3,6 +3,8 @@ import ReactSlider, { Settings } from "react-slick";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 interface Props {
   settings?: Settings;
@@ -40,7 +42,6 @@ const ArrowButton = styled.button<{ pos?: "left" | "right" }>`
 `;
 
 const DEFAULT_SETTINGS: Settings = {
-  slide: "Slider",
   dots: false,
   arrows: true,
   infinite: true,
@@ -49,7 +50,6 @@ const DEFAULT_SETTINGS: Settings = {
   slidesToScroll: 5,
   swipe: true,
   draggable: true,
-  vertical: false,
   prevArrow: (
     <ArrowButton pos="left">
       <MdArrowBackIos />

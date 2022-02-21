@@ -73,14 +73,14 @@ const Average = styled.div`
 const Card: React.FC<Props> = ({
   linkUrl,
   title,
-  year,
   posterPath,
   voteAverage,
+  year,
 }) => (
   <StyledLink to={linkUrl}>
     <Base>
       <ImageWrapper>
-        <Image src={posterPath} alt={`${title}의 포스터`} />
+        <Image src={posterPath} alt={`${title} 의 포스터`} />
       </ImageWrapper>
       <Info>
         <Title>{title}</Title>

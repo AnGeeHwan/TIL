@@ -6,7 +6,7 @@ export const upcomingApi = () => axiosInstance.get("/movie/upcoming");
 
 export const nowPlayingApi = () => axiosInstance.get("/movie/now_playing");
 
-export const todoRatedApi = () => axiosInstance.get("/movie/top_rated");
+export const topRatedApi = () => axiosInstance.get("/movie/top_rated");
 
 export const popularApi = () => axiosInstance.get("/movie/popular");
 
