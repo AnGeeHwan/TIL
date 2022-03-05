@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 
 function reducer(state, action) {
   return {
@@ -12,6 +12,15 @@ const Info = () => {
     name: "",
     nickname: "",
   });
+
+  useEffect(() => {
+    console.log(`effect`);
+    console.log(name);
+    return () => {
+      console.log(`cleanup`);
+      console.log(name);
+    };
+  }, [name]);
 
   const { name, nickname } = state;
 
