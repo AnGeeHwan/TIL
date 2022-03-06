@@ -1,32 +1,39 @@
-import React, { useEffect, useReducer } from "react";
+import React from "react";
+import useInputs from "./useInputs";
 
-function reducer(state, action) {
-  return {
-    ...state,
-    [action.name]: action.value,
-  };
-}
+// function reducer(state, action) {
+//   return {
+//     ...state,
+//     [action.name]: action.value,
+//   };
+// }
 
 const Info = () => {
-  const [state, dispatch] = useReducer(reducer, {
+  // const [state, dispatch] = useReducer(reducer, {
+  //   name: "",
+  //   nickname: "",
+  // });
+
+  // useEffect(() => {
+  //   console.log(`effect`);
+  //   console.log(name);
+  //   return () => {
+  //     console.log(`cleanup`);
+  //     console.log(name);
+  //   };
+  // }, [name]);
+
+  // const { name, nickname } = state;
+
+  // const onChange = (e) => {
+  //   dispatch(e.target);
+  // };
+  const [state, onChange] = useInputs({
     name: "",
     nickname: "",
   });
 
-  useEffect(() => {
-    console.log(`effect`);
-    console.log(name);
-    return () => {
-      console.log(`cleanup`);
-      console.log(name);
-    };
-  }, [name]);
-
   const { name, nickname } = state;
-
-  const onChange = (e) => {
-    dispatch(e.target);
-  };
 
   return (
     <div>
