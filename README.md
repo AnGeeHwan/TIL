@@ -13,9 +13,6 @@ git 정리 & 프로그래머스 & 강의 & 리액트를 다루는 기술 & 토�
     * MainPage Slider & Section 구현(Moive)
     * tv Section 직접 진행 완료 ( 22.02.21)
 
-### 토이프로젝트 진행중
- * redux-toolkit 활용한 상태관리
- * 
 
 ### 프로그래머스 연습 진행 - 알고리즘 
  * 기본부터 JavaScript 관련문제 ( 20문제 ) - 2022.02.22
