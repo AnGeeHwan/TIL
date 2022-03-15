@@ -27,3 +27,7 @@ function getData<T>(url: string): T {
 
 newsFeed = store.feeds = makeFeeds(getData<NewsFeed[]>(NEWS_URL));
 ```
+
+## type Alias vs interface
+* 인터페이스가 조금 더 명확하고 명시적인 느낌을 줌
+* 타입 알리아스의 경우 유니온 타입 지원. 인터페이스는 지원하지 않음.
