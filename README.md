@@ -29,3 +29,17 @@ git 정리 & 프로그래머스 & 강의 & 리액트를 다루는 기술 & 백�
  * 장점
   * 새로고침이 없으므로 웹페이지 전환이 부드러워짐
  * 개별적 개발시 CORS 정책을 끄고 사용
+
+## Error 해결 방안
+
+### firebase storage 사용시 import Error의 경우 v9로 업데이트 
+ * v9 설치후
+ ```javascript
+ npm i firebase@9.6.8
+ ```
+ * import 예시 
+```javascript
+import firebase from 'firebase/compat/app'
+import "firebase/compat/storage"
+import "firebase/compat/firestore"
+```
