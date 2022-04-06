@@ -134,6 +134,48 @@
   ```
 
 ## 객체 리터럴
+ * 동적 추가 가능
+ ```javascript
+ var person = {
+  name: 'An'
+ };
+ 
+ person.age = 31;
+ console.log(person); // {name: "An", age: 31} 
+ ```
+ * ES5 
+ ```javascript
+ var i = 0;
+ var obj = {};
+ // 계산된 프로퍼티 이름으로 프로퍼티 키 동적생성
+ obj[prefix + '-' + ++i] = i;
+ obj[prefix + '-' + ++i] = i;
+ obj[prefix + '-' + ++i] = i;
+ console.log(obj); // {prop-1: 1, prop-2: 2, prop-3: 3}
+ ```
+ * ES6
+ ```javascript
+ const prefix = 'prop';
+ var i = 0;
+ // 객체 리터럴 내부에서 계산된 프로퍼티 이름으로 프로퍼티 키 동적생성
+ var obj = { 
+  [`${prefix}-${++i}]: i;
+  [`${prefix}-${++i}]: i;
+  [`${prefix}-${++i}]: i;
+ };
+ console.log(obj); // {prop-1: 1, prop-2: 2, prop-3: 3}
+ ```
+## 원시값과 객체의 비교
+ * const로 선언한 변수는 재할당 금지이나 하지만 그 변수에 할당한 객체는 변경 가능.
+ ```javascript
+ // const 키워드를 사용해 선언한 변수는 재할당이 금지된다. 상수는 재할당이 금지된 변수일 뿐이다.
+ const o = {};
+ // const 키워드를 사용해 선언한 변수에 할당한 원시값(상수)은 변경할 수 없다.
+ // 하지만 const 키워드를 사용해 선언한 변수에 할당한 객체는 변경할 수 있다.
+ o.a = 1;
+ console.log(o); // {a: 1}
+ ```
+ 
  
  
 [출처_wikibook/mjs](https://github.com/wikibook/mjs/blob/master)
