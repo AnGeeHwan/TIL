@@ -1,6 +1,7 @@
 # Vue.js
  - UI를 빠르게 개발하기 위해 만들어진 자바스크립트 프레임워크
  - MVVM(Model-View-ViewModel) 패턴으로, 어플리케이션 로직과 UI 분리를 위해 설계
+ - SFC(Single File Component) 체계
 
 ## 장점
  - 다른 프레임워크보다 유연하고 가벼움
