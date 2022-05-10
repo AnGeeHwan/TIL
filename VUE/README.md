@@ -40,3 +40,103 @@ new Vue({
 ## 뷰컴포넌트
  - 전역컴포넌트
  - 지역컴포넌트
+
+
+## 스타일 가이드
+
+### 필수(에러방지)
+ - 컴포넌트 이름에 합성어 사용
+ - Bad
+ ```javascript
+ export default {
+  name: 'Todo',
+  // ...
+ }
+ ```
+ - Good
+ ``` javascript
+ export default {
+  name: 'TodoItem',
+  // ...
+ }
+ ```
+ - Component Data (컴포넌트의 data는 반드시 함수여야 함.)
+ - Bad
+ ```javascript
+ export default {
+   data: {
+     foo: 'bar'
+   }
+ }
+ ```
+ - Good
+   ```javascript
+ export default {
+   data () {
+     return {
+       foo: 'bar'
+     }
+   }
+ }
+ ```
+ - Props 정의 (Prop은 가능한 상세하게 정의되어야 합니다.)
+ - Bad
+  ```javascript
+ // This is only OK when prototyping
+ props: ['status'] 
+ ```
+ - Good
+```javascript
+ props: {
+   status: String
+ }
+
+  // Even better!
+ props: {
+   status: {
+     type: String,
+     required: true,
+     validator: function (value) {
+       return [
+         'syncing',
+         'synced',
+         'version-conflict',
+         'error'
+       ].indexOf(value) !== -1
+     }
+   }
+ }
+ ```
+ - v-for에 key 지정 (v-for는 항상 key와 함께 사용합니다.)
+ - v-if와 v-for를 동시에 사용 X (v-for가 사용된 엘리먼트에 절대 v-if 사용 금지)
+ - Bad
+ ```html
+ <ul>
+  <li
+    v-for="user in users"
+    v-if="shouldShowUsers"
+    :key="user.id"
+  >
+    {{ user.name }}
+  </li>
+</ul>
+ ```
+ -Good
+  ```html
+<ul v-if="shouldShowUsers">
+  <li
+    v-for="user in users"
+    :key="user.id"
+  >
+    {{ user.name }}
+  </li>
+</ul>
+ ```
+ - 컴포넌트 스타일 스코프 ( 컴포넌트 별로 style에 scoped를 주어 스타일을 각자 사용 )
+   - <style scoped> 기능 사용
+ - Private 속성 이름 ( 커스텀 사용자 private 프로퍼티에서 항상 접두사 $ 사용 )
+ 
+ 
+### Strongly Recommended
+### Recommended
+### Use with Caution
