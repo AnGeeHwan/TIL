@@ -193,7 +193,7 @@ new Vue({
  - v-for에 key 지정 (v-for는 항상 key와 함께 사용합니다.)
  - v-if와 v-for를 동시에 사용 X (v-for가 사용된 엘리먼트에 절대 v-if 사용 금지)
  - Bad
-```html
+```
  <ul>
   <li
     v-for="user in users"
@@ -205,7 +205,7 @@ new Vue({
 </ul>
 ```
  -Good
-```html
+```
 <ul v-if="shouldShowUsers">
   <li
     v-for="user in users"
@@ -219,5 +219,6 @@ new Vue({
    - <style scoped> 기능 사용
  - Private 속성 이름 ( 커스텀 사용자 private 프로퍼티에서 항상 접두사 $ 사용 )
  
-[참조-Vuejs 공식](https://v2.vuejs.org/v2/style-guide/?redirect=true#Component-name-casing-in-templates-strongly-recommended)
+[참조-Vuejs 공식문서](https://v2.vuejs.org/v2/style-guide/?redirect=true#Component-name-casing-in-templates-strongly-recommended)
 
+## Strongly Recommended
