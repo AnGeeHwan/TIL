@@ -34,7 +34,7 @@ new Vue({
   data: , // 뷰의 반응성 속성
   methods: , // 화면 동작 및 이벤트 로직 제어 메소드
   created: , // 뷰의 라이프사이클과 관련된 속성
-  watch: , data에서 정의한 속성이 변화했을 때 추가 동작 수행할 수 있게 정의하는 속성
+  watch: , // data에서 정의한 속성이 변화했을 때 추가 동작 수행할 수 있게 정의하는 속성
 })
 ```
 
@@ -123,7 +123,7 @@ new Vue({
 ```html
 <"컴포넌트" v-bind : "프롭스 속성명" = "상위 컴포넌트 데이터명"></"컴포넌트">
 ```
-> https://jangcenter.tistory.com/133?category=1055253
+[참조 ](https://jangcenter.tistory.com/133?category=1055253)
 
 ## 스타일 가이드
 
@@ -219,10 +219,5 @@ new Vue({
    - <style scoped> 기능 사용
  - Private 속성 이름 ( 커스텀 사용자 private 프로퍼티에서 항상 접두사 $ 사용 )
  
- 
-### Strongly Recommended
-### Recommended
-### Use with Caution
-> https://kr.vuejs.org/v2/style-guide/
- 
- 
+[참조-Vuejs 공식](https://v2.vuejs.org/v2/style-guide/?redirect=true#Component-name-casing-in-templates-strongly-recommended)
+
