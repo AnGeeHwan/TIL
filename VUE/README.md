@@ -204,7 +204,7 @@ new Vue({
   </li>
 </ul>
 ```
- -Good
+ - Good
 ```
 <ul v-if="shouldShowUsers">
   <li
@@ -216,9 +216,28 @@ new Vue({
 </ul>
 ```
  - 컴포넌트 스타일 스코프 ( 컴포넌트 별로 style에 scoped를 주어 스타일을 각자 사용 )
-   - <style scoped> 기능 사용
- - Private 속성 이름 ( 커스텀 사용자 private 프로퍼티에서 항상 접두사 $ 사용 )
- 
+   - ```<style scoped>``` 기능 사용
+ - Private 속성 이름 (커스텀 사용자 private 프로퍼티에서 항상 접두사 $ 사용)
+	
 [참조-Vuejs 공식문서](https://v2.vuejs.org/v2/style-guide/?redirect=true#Component-name-casing-in-templates-strongly-recommended)
 
 ## Strongly Recommended
+### 컴포넌트 등록시
+ - 파스칼 케이스와 케밥 케이스
+```javascript
+<template>
+ <div id="app">
+  <tool-bar></tool-bar>
+ </div>
+</template>
+
+<script>
+import ToolBar from './components/ToolBar.vue'
+export default {
+ components: {
+  ToolBar,
+ },
+},
+</script>
+```
+ - 스크립트 단에서는 컴포넌트를 파스칼 케이스로 등록하지만 태그로 등록할 때는 케밥 케이스로 !
